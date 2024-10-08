@@ -51,11 +51,17 @@
     color: var(--green-col);
 }
 
+.header__link .active {
+    color: var(--green-col);
+    text-decoration: underline;
+}
+
 .header__btn {
     padding: 10px;
     font-size: 18px;
     line-height: 25px;
     border-radius: 8px;
+    color: #000;
 }
 
 .header__btn:hover {

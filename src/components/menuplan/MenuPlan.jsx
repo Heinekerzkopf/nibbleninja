@@ -1,7 +1,11 @@
+import HeaderComp from "../mainpage/header/HeaderComp"
+
 const MenuPlan = () => {
-  return (
-    <div>MenuPlan</div>
-  )
+    return (
+        <div>
+            <h1>menuplan</h1>
+        </div>
+    )
 }
 
 export default MenuPlan
