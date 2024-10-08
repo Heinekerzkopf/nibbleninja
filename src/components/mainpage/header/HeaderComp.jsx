@@ -1,10 +1,32 @@
-import './headercomp.css'
+import { useState, useEffect } from 'react'
 import logo from '../../../img/logo_img.svg'
 import logoText from '../../../img/logo_text.svg'
+import './headercomp.css'
 
-const header = () => {
+const HeaderComp = () => {
+
+    /* funkcionalita => pri scrollu se nam prida background color a opacity pro header */
+    const [isFixed, setIsFixed] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsFixed(true);
+            } else {
+                setIsFixed(false);
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+
+    }, [])
+
     return (
-        <div className="header">
+        <div className={isFixed ? 'scroll__header header' : 'header'}>
             <div className="header__container">
                 <nav className="header__nav">
                     <div className="header__row">
@@ -34,4 +56,4 @@ const header = () => {
     )
 }
 
-export default header;
+export default HeaderComp;

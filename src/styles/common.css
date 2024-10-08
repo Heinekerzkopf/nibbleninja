@@ -12,6 +12,8 @@ body {
     --tablet: 991.98px;
     --mobile: 767.98px;
     --mobileSmall: 479.98px;
+    --black-black-600: #616161;
+    --green-col: #22B573;
 }
 
 [class*="__container"] {
@@ -20,8 +22,8 @@ body {
 }
 
 .logo {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     position: relative;
     left: -55px;
     transform: rotate(15deg);
