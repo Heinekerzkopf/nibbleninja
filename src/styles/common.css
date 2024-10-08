@@ -1,0 +1,28 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --minWidth: 320px;
+    --maxWidth: 1920px;
+    --maxWidthContainer: 1250px;
+    --containerPadding: 30px;
+    --containerWidth: calc(var(--maxWidthContainer) + var(--containerPadding));
+    --pc: calc(1170px + 30px); 
+    --tablet: 991.98px;
+    --mobile: 767.98px;
+    --mobileSmall: 479.98px;
+}
+
+[class*="__container"] {
+    max-width: var(--containerWidth);
+    margin: 0 auto;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    left: -55px;
+    transform: rotate(15deg);
+}
