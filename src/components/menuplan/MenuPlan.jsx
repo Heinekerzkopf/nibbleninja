@@ -1,4 +1,4 @@
-import HeaderComp from "../mainpage/header/HeaderComp"
+import './menuplan.css'
 
 const MenuPlan = () => {
     return (

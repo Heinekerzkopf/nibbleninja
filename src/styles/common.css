@@ -28,3 +28,9 @@ body {
     left: -55px;
     transform: rotate(15deg);
 }
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

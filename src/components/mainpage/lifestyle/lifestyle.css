@@ -1,0 +1,70 @@
+.lifestyle {
+    position: relative;
+}
+
+.lifestyle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #beebc2;
+}
+
+.lifestyle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #beebc2;
+}
+
+.lifestyle__title-block {
+    padding-top: 50px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.lifestyle_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lifestyle_title {
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 55px;
+    position: absolute;
+    top: 48%;
+    left: 18%;
+}
+
+.lifestyle__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    padding-bottom: 65px;
+}
+
+.lifestyle__list-item {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.list-item__text {
+    color: #000;
+    font-size: 20px;
+    line-height: 27px; /* 135% */
+}
+
+.list-item__icon {
+    color: red;
+}

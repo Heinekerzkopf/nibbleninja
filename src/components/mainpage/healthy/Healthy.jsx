@@ -11,7 +11,7 @@ const Healthy = () => {
                             <h1><span>Healthy</span> living made  easy!!</h1>
                         </div>
                         <div className="text-column__text">
-                            <p>Get your custom plans & one-on-one guidance from our experts</p>
+                            <p>Get your meal plans, recipes & count your calories</p>
                         </div>
                         <div className="text-column__btn">
                             <button className="button__text-column">Sign in</button>

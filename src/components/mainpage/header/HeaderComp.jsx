@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react'
-import logo from '../../../img/logo_img.svg'
-import logoText from '../../../img/logo_text.svg'
-import './headercomp.css'
-import { NavLink } from 'react-router-dom'
+// src/components/header/HeaderComp.jsx
+import { useState, useEffect } from 'react';
+import logo from '../../../img/logo_img.svg';
+import logoText from '../../../img/logo_text.svg';
+import './headercomp.css';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext';
 
 const HeaderComp = () => {
+    const { isAuthenticated, logout } = useAuth();
+    const navigate = useNavigate(); 
 
     /* funkcionalita => pri scrollu se nam prida background color a opacity pro header */
-    const [isFixed, setIsFixed] = useState(false)
+    const [isFixed, setIsFixed] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,15 +20,19 @@ const HeaderComp = () => {
             } else {
                 setIsFixed(false);
             }
-        }
+        };
 
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
-    }, [])
+    const handleLogout = () => {
+        logout(); 
+        navigate('/');
+    };
 
     return (
         <div className={isFixed ? 'scroll__header header' : 'header'}>
@@ -45,16 +53,24 @@ const HeaderComp = () => {
                         </div>
                         <div className="header__column-login">
                             <div className='header__login-btns'>
-                                {/* write LOGIN & ACCOUNT LOGIC function*/}
-                                <NavLink to="login" className='header__btn header__btn-login'>Login</NavLink>
-                                <NavLink to="signup" className='header__btn header__btn-singup'>Sign up</NavLink>
+                                {isAuthenticated ? (
+                                    <>
+                                        <NavLink to="/account" className='header__btn header__btn-account'>Account</NavLink>
+                                        <button onClick={handleLogout} className='header__btn header__btn-logout'>Logout</button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <NavLink to="/login" className='header__btn header__btn-login'>Login</NavLink>
+                                        <NavLink to="/signup" className='header__btn header__btn-singup'>Sign up</NavLink>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
                 </nav>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default HeaderComp;
