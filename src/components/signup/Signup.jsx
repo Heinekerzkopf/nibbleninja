@@ -28,7 +28,7 @@ const Signup = () => {
                             <p>Sign up</p>
                         </div>
                         <div className="signup__auth signup__login">
-                            <label htmlFor="signupLogin">Login</label>
+                            <label htmlFor="signupLogin">Email</label>
                             <input type="text" name="signupLogin" id="signupLogin" value={login} onChange={(e) => setLogin(e.target.value)} required />
                         </div>
                         <div className="signup__auth signup__password">

@@ -1,0 +1,113 @@
+.recipes {
+    margin-top: 80px;
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipes__container {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.recipes__container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.recipes__search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.recipes__search input {
+    padding: 12px 15px;
+    font-size: 1rem;
+    width: 70%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.recipes__search input:focus {
+    border-color: #22b573;
+    box-shadow: 0 0 8px rgba(34, 181, 115, 0.3);
+}
+
+.recipes__search button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #22b573;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.recipes__search button:hover {
+    background-color: #177f50;
+    transform: translateY(-2px);
+}
+
+.recipes__search button:active {
+    transform: translateY(0);
+}
+
+.recipes__list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.recipe__card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.recipe__card:hover {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+.recipe__card h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.recipe__card p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.recipe__card strong {
+    color: #22b573;
+}
+
+.error-message {
+    color: #dc2f39;
+    font-weight: bold;
+    margin-top: 20px;
+}

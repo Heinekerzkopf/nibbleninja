@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
-    column-gap: 30px;
+    column-gap: 20px;
 }
 
 .header__logo {
@@ -33,16 +33,12 @@
 
 .header__links {
     display: flex;
-    column-gap: 30px;
-}
-
-.header__link {
-    padding: 10px;
+    column-gap: 20px;
 }
 
 .header__link a {
     color: var(--black-black-600);
-    font-size: 20px;
+    font-size: 18px;
     line-height: 27px;
 }
 
@@ -72,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: 50px;
+    column-gap: 25px;
 }
 
 .header__btn-singup {
@@ -87,5 +83,44 @@
 
 .header__btn-login:hover {
     background-color: #32794f;
+    color: #fff;
+}
+
+.header__btn-account {
+    border: 1px solid #32794f;
+}
+
+.header__calorie-bar {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.header__calorie-bar-label {
+    font-size: 14px;
+    margin-right: 10px;
+    width: 120px;
+}
+
+.header__calorie-bar-track {
+    width: 130px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.header__calorie-bar-fill {
+    height: 100%;
+    background-color: #76c7c0;
+    transition: width 0.3s ease;
+}
+
+.header__btn-account:hover {
+    background-color: #32794f;
+    color: #fff;
+}
+
+.header__btn-logout:hover {
     color: #fff;
 }

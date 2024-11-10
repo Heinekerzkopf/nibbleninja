@@ -1,36 +1,24 @@
-// src/components/header/HeaderComp.jsx
+// src/components/header/HeaderComp.js
 import { useState, useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext';
 import logo from '../../../img/logo_img.svg';
 import logoText from '../../../img/logo_text.svg';
 import './headercomp.css';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../AuthContext';
 
 const HeaderComp = () => {
-    const { isAuthenticated, logout } = useAuth();
-    const navigate = useNavigate(); 
-
-    /* funkcionalita => pri scrollu se nam prida background color a opacity pro header */
+    const { isAuthenticated, logout, dailyGoal, currentCalories } = useAuth();
+    const navigate = useNavigate();
     const [isFixed, setIsFixed] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setIsFixed(true);
-            } else {
-                setIsFixed(false);
-            }
-        };
-
+        const handleScroll = () => setIsFixed(window.scrollY > 100);
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const handleLogout = () => {
-        logout(); 
+        logout();
         navigate('/');
     };
 
@@ -46,27 +34,42 @@ const HeaderComp = () => {
                             </div>
                             <ul className='header__links'>
                                 <li className='header__link'><NavLink to="." end>Home</NavLink></li>
-                                <li className='header__link'><NavLink to="menuplan">Menu plan</NavLink></li>
+                                <li className='header__link'><NavLink to={isAuthenticated ? "menuplan" : "login"}>Menu Planner</NavLink></li>
                                 <li className='header__link'><NavLink to="recipes">Recipes</NavLink></li>
-                                <li className='header__link'><NavLink to="caloriescounter">Calories counter</NavLink></li>
+                                <li className='header__link'><NavLink to="caloriescounter">Get Nutrition</NavLink></li>
                             </ul>
                         </div>
                         <div className="header__column-login">
                             <div className='header__login-btns'>
                                 {isAuthenticated ? (
                                     <>
+                                        {isAuthenticated && dailyGoal > 0 && (
+                                            <div className="header__calorie-bar">
+                                                <div className="header__calorie-bar-label">
+                                                    {Math.round(currentCalories)} / {Math.round(dailyGoal)} kcal
+                                                </div>
+                                                <div className="header__calorie-bar-track">
+                                                    <div
+                                                        className="header__calorie-bar-fill"
+                                                        style={{ width: `${(currentCalories / dailyGoal) * 100}%` }}
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                        )}
                                         <NavLink to="/account" className='header__btn header__btn-account'>Account</NavLink>
                                         <button onClick={handleLogout} className='header__btn header__btn-logout'>Logout</button>
                                     </>
                                 ) : (
                                     <>
                                         <NavLink to="/login" className='header__btn header__btn-login'>Login</NavLink>
-                                        <NavLink to="/signup" className='header__btn header__btn-singup'>Sign up</NavLink>
+                                        <NavLink to="/signup" className='header__btn header__btn-signup'>Sign up</NavLink>
                                     </>
                                 )}
                             </div>
                         </div>
                     </div>
+
+
                 </nav>
             </div>
         </div>

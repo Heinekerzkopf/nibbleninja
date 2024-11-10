@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors());
-app.use(express.json()); // Middleware to parse JSON requests
+app.use(express.json()); 
 
 const db = mysql.createConnection({
     host: "sql7.freesqldatabase.com",
@@ -37,6 +37,24 @@ app.post('/register', (req, res) => {
     db.query(sql, [login, password], (err, result) => {
         if (err) return res.status(500).json("Error");
         return res.status(201).json("User registered successfully");
+    });
+});
+
+// Update account details endpoint
+app.post('/account', (req, res) => {
+    const { login, age, gender, weight, goal, height } = req.body;
+    
+    const sql = "UPDATE login SET age = ?, gender = ?, weight = ?, goal = ?, height = ? WHERE login = ?";
+
+    db.query(sql, [age, gender, weight, goal, height, login], (err, result) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json("Error updating user details");
+        }
+        if (result.affectedRows === 0) {
+            return res.status(404).json("User not found");
+        }
+        return res.status(200).json("User details updated successfully");
     });
 });
 

@@ -17,8 +17,9 @@ const Login = () => {
         axios.post('http://localhost:3001/login', { login: loginInput, password })
             .then(res => {
                 if (res.data === "Login Successfully") {
-                    login(); 
-                    navigate('/account'); 
+                    login();
+                    localStorage.setItem('userLogin', loginInput); // Store the login
+                    navigate('/account');
                 } else {
                     console.log(res.data);
                 }
@@ -35,12 +36,24 @@ const Login = () => {
                             <p>Login</p>
                         </div>
                         <div className="login__auth login__email">
-                            <label htmlFor="login">Login</label>
-                            <input type="text" value={loginInput} name="login" id="login" onChange={(e) => setLoginInput(e.target.value)} />
+                            <label htmlFor="login">Email</label>
+                            <input
+                                type="text"
+                                value={loginInput}
+                                name="login"
+                                id="login"
+                                onChange={(e) => setLoginInput(e.target.value)}
+                            />
                         </div>
                         <div className="login__auth login__password">
                             <label htmlFor="password">Password</label>
-                            <input type="password" value={password} name="password" id="password" onChange={(e) => setPassword(e.target.value)} />
+                            <input
+                                type="password"
+                                value={password}
+                                name="password"
+                                id="password"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
                             <NavLink to="/reset" className='login__forget-password'>Forget password?</NavLink>
                         </div>
                         <button type='submit' className='login__button'>Login</button>

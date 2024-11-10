@@ -8,7 +8,7 @@ const Invest = () => {
                     <p>Invest in yourself and</p>
                     <p> boost your <span className='invest__title-text-big'>health, body</span> and <span className='invest__title-text-big'>confidence</span></p>
                 </div>
-                <button type="submit" class="invest__button">Start today</button>
+                <button type="submit" className="invest__button">Start today</button>
             </div>
         </div>
     )

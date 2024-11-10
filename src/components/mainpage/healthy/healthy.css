@@ -1,6 +1,11 @@
 .healthy {
-    padding: 50px 0 130px;
-    margin-top: 150px;
+    padding: 0;
+    margin: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
 }
 
 .healthy__row {

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import mainpage__image from '../img_mainpage/mainpage_img.svg'
 import './healthy.css'
 
@@ -14,7 +15,7 @@ const Healthy = () => {
                             <p>Get your meal plans, recipes & count your calories</p>
                         </div>
                         <div className="text-column__btn">
-                            <button className="button__text-column">Sign in</button>
+                            <NavLink to="login" className="button__text-column">Sign in</NavLink>
                             <span className="text__text-column">Sign in & get started today</span>
                         </div>
                     </div>
