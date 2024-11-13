@@ -11,6 +11,7 @@ const HeaderComp = () => {
     const navigate = useNavigate();
     const [isFixed, setIsFixed] = useState(false);
 
+
     useEffect(() => {
         const handleScroll = () => setIsFixed(window.scrollY > 100);
         window.addEventListener('scroll', handleScroll);
@@ -34,7 +35,7 @@ const HeaderComp = () => {
                             </div>
                             <ul className='header__links'>
                                 <li className='header__link'><NavLink to="." end>Home</NavLink></li>
-                                <li className='header__link'><NavLink to={isAuthenticated ? "menuplan" : "login"}>Menu Planner</NavLink></li>
+                                <li className='header__link'><NavLink to="menuplan">Menu Planner</NavLink></li>
                                 <li className='header__link'><NavLink to="recipes">Recipes</NavLink></li>
                                 <li className='header__link'><NavLink to="caloriescounter">Get Nutrition</NavLink></li>
                             </ul>

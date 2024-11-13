@@ -21,6 +21,7 @@ const Login = () => {
                     localStorage.setItem('userLogin', loginInput); // Store the login
                     navigate('/account');
                 } else {
+                    alert("Check your email or password...")
                     console.log(res.data);
                 }
             })
@@ -38,7 +39,7 @@ const Login = () => {
                         <div className="login__auth login__email">
                             <label htmlFor="login">Email</label>
                             <input
-                                type="text"
+                                type="email"
                                 value={loginInput}
                                 name="login"
                                 id="login"

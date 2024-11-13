@@ -18,6 +18,23 @@ const Account = () => {
         event.preventDefault();
         const formData = { login, age, gender, weight, goal, height };
 
+        if (age <= 1 || age >= 99) {
+            alert("I think there is something wrong with your age 🤡")
+            return
+        }
+        if (weight <= 10 || weight >= 250) {
+            alert("I think there is something wrong with your weight 🤡")
+            return
+        }
+        if (goal <= 10 || goal >= 250) {
+            alert("I think there is something wrong with your goal 🤡")
+            return
+        }
+        if (height <= 80 || weight >= 250) {
+            alert("I think there is something wrong with your weight 🤡")
+            return
+        }
+
         try {
             await axios.post('http://localhost:3001/account', formData);
             updateUserDetails(formData);

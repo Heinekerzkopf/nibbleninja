@@ -21,7 +21,6 @@ export const AuthProvider = ({ children }) => {
         const lastResetDate = localStorage.getItem('lastResetDate');
         const today = new Date().toDateString();
     
-        // Check if the calories should be reset for a new day
         if (lastResetDate !== today) {
             setCurrentCalories(0);
             localStorage.setItem('currentCalories', '0');
@@ -35,7 +34,7 @@ export const AuthProvider = ({ children }) => {
     const addCalories = (calories) => {
         setCurrentCalories((prevCalories) => {
             const newCalories = prevCalories + calories;
-            // Save the updated currentCalories to localStorage
+            
             localStorage.setItem('currentCalories', newCalories);
             return newCalories;
         });

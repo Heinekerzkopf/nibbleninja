@@ -32,13 +32,25 @@ app.post('/login', (req, res) => {
 // Registration endpoint
 app.post('/register', (req, res) => {
     const { login, password } = req.body;
-    const sql = "INSERT INTO login (login, password) VALUES (?, ?)";
-    
-    db.query(sql, [login, password], (err, result) => {
+
+    // Check if user already exists
+    const checkUserSql = "SELECT * FROM login WHERE login = ?";
+    db.query(checkUserSql, [login], (err, data) => {
         if (err) return res.status(500).json("Error");
-        return res.status(201).json("User registered successfully");
+
+        if (data.length > 0) {
+            return res.status(409).json("User already registered");
+        } else {
+            // Insert new user
+            const insertUserSql = "INSERT INTO login (login, password) VALUES (?, ?)";
+            db.query(insertUserSql, [login, password], (err, result) => {
+                if (err) return res.status(500).json("Error");
+                return res.status(201).json("User registered successfully");
+            });
+        }
     });
 });
+
 
 // Update account details endpoint
 app.post('/account', (req, res) => {

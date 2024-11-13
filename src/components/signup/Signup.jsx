@@ -11,13 +11,27 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+    
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            return;
+        }
+    
         axios.post('http://localhost:3001/register', { login, password })
             .then(res => {
                 console.log(res.data);
+                alert("User registered successfully");
                 navigate('/login');
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                if (err.response && err.response.status === 409) {
+                    alert("User with this login is already registered.");
+                } else {
+                    console.log(err);
+                }
+            });
     };
+    
 
     return (
         <div className='signup'>
@@ -29,7 +43,7 @@ const Signup = () => {
                         </div>
                         <div className="signup__auth signup__login">
                             <label htmlFor="signupLogin">Email</label>
-                            <input type="text" name="signupLogin" id="signupLogin" value={login} onChange={(e) => setLogin(e.target.value)} required />
+                            <input type="email" name="signupLogin" id="signupLogin" value={login} onChange={(e) => setLogin(e.target.value)} required />
                         </div>
                         <div className="signup__auth signup__password">
                             <label htmlFor="signupPassword">Password</label>
