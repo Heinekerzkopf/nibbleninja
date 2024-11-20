@@ -128,3 +128,9 @@
 .nutrition-card p span {
     font-weight: 700;
 }
+
+@media (max-width: 667.98px){
+    .caloriescounter {
+        margin-top: 150px;
+    }
+}

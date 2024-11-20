@@ -44,14 +44,14 @@
 }
 
 .recipes__search input:focus {
-    border-color: #22b573;
+    border-color: green;
     box-shadow: 0 0 8px rgba(34, 181, 115, 0.3);
 }
 
 .recipes__search button {
     padding: 12px 20px;
     font-size: 1rem;
-    background-color: #22b573;
+    background-color: rgb(32, 127, 32);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -60,7 +60,7 @@
 }
 
 .recipes__search button:hover {
-    background-color: #177f50;
+    background-color: #016236;
     transform: translateY(-2px);
 }
 

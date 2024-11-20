@@ -63,3 +63,29 @@
     font-size: 14px;
     line-height: 19px; /* 135.714% */
 }
+
+@media (max-width: 997.98px){
+    .healthy__row {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .healthy__column-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 35px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .text-column__btn {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-column__image {
+        display: none;
+    }
+}

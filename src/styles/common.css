@@ -1,5 +1,20 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+body .lock {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
 }
 
 :root {
@@ -8,17 +23,18 @@ body {
     --maxWidthContainer: 1250px;
     --containerPadding: 30px;
     --containerWidth: calc(var(--maxWidthContainer) + var(--containerPadding));
-    --pc: calc(1170px + 30px); 
+    --pc: calc(1170px + 30px);
     --tablet: 991.98px;
     --mobile: 767.98px;
     --mobileSmall: 479.98px;
     --black-black-600: #616161;
-    --green-col: #22B573;
+    --green-col: #22b573;
 }
 
 [class*="__container"] {
     max-width: var(--containerWidth);
     margin: 0 auto;
+    padding: 10px;
 }
 
 .logo {

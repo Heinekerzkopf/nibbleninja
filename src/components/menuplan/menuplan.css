@@ -94,7 +94,8 @@ input[type="checkbox"] + label {
         padding: 15px;
     }
 
-    select, input[type="number"] {
+    select,
+    input[type="number"] {
         font-size: 14px;
     }
 
@@ -105,17 +106,17 @@ input[type="checkbox"] + label {
 
 .menuplan__allergies {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
     padding: 20px;
 }
 
 .menuplan__meals {
     margin-top: 50px;
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px; 
+    gap: 30px;
 }
 
 .menuplan__meal {
@@ -178,4 +179,18 @@ input[type="checkbox"] + label {
 
 .menuplan__unautorizhed p {
     text-align: center;
+}
+
+@media (max-width: 667.98px) {
+
+    .menuplan {
+        margin-top: 150px
+    }
+
+    .menuplan__allergies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
 }

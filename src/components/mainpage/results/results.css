@@ -53,3 +53,19 @@
     max-width: 740px;
     max-height: 740px;
 }
+
+@media (max-width: 997.98px){
+    .results__row img {
+        display: none;
+    }
+
+    .results {
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    .results__column-text {
+        padding: 10px;
+    }
+      
+}

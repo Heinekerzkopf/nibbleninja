@@ -124,3 +124,103 @@
 .header__btn-logout:hover {
     color: #fff;
 }
+
+@media (max-width: 1167.98px) {
+    .header__link a {
+        font-size: 16px;
+        line-height: 27px;
+    }
+
+    .header__links {
+        column-gap: 10px;
+    }
+
+    .header__column-logo {
+        column-gap: 10px;
+    }
+
+    .header__login-btns {
+        column-gap: 10px;
+    }
+
+    .header__calorie-bar-label {
+        max-width: 40%;
+        margin-right: 0;
+    }
+
+    .header__calorie-bar-track {
+        max-width: 40%;
+    }
+
+    .header__calorie-bar {
+        padding: 5px 0;
+        justify-content: end;
+    }
+
+    .logo__txt {
+        max-width: 90%;
+    }
+
+    .logo {
+        max-width: 90%;
+    }
+
+    .header__btn {
+        padding: 5;
+        font-size: 16px;
+        line-height: 22px;
+        border-radius: 8px;
+        color: #000;
+    }
+
+    .header__logo {
+        width: 200px;
+    }
+}
+
+@media (max-width: 997.98px) {
+    .header {
+        padding: 0;
+    }
+
+    .header__container {
+        padding: 5px;
+    }
+
+    .header__row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    .header__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__links {
+        column-gap: 20px;
+    }
+}
+
+@media (max-width: 441.98px) {
+    .header__links {
+        column-gap: 10px;
+    }
+    .header__login-btns {
+        max-width: 375px;
+    }
+
+    .header__calorie-bar-label {
+        width: 100px;
+    }
+
+    .header__row {
+        max-width: 375px;
+    }
+    .header__calorie-bar-track {
+        width: 100px;
+    }
+}

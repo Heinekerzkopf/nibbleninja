@@ -13,7 +13,7 @@ const Signup = () => {
         e.preventDefault();
     
         if (password.length < 6) {
-            alert("Password must be at least 6 characters long.");
+            alert("Password must be at least 6 characters long");
             return;
         }
     
@@ -25,7 +25,7 @@ const Signup = () => {
             })
             .catch(err => {
                 if (err.response && err.response.status === 409) {
-                    alert("User with this login is already registered.");
+                    alert("User with this email is already registered");
                 } else {
                     console.log(err);
                 }
